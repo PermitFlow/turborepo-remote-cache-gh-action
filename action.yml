@@ -22,6 +22,12 @@ inputs:
   port:
     description: "Sets the port the server will listen on, and is added to the end of the TURBO_API env variable."
     required: false
+  port-retry-time-ms:
+    description: "Sets interval between checks to see if server is running on port. Defaults to 250ms."
+    required: false
+  port-timeout-ms:
+    description: "Sets timeout of port checking. If server is not up and running on the port after this period, the action will fail. Defaults to 5000ms."
+    required: false
 runs:
   using: "node16"
   main: "dist/start/index.js"
